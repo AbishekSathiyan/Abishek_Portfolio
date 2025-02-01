@@ -18,14 +18,31 @@
     <header class="fixed w-full bg-white shadow-md py-4 z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
             <h1 class="text-2xl font-bold">Abishek S</h1>
-            <h2 class="text-2xl font-bold">MERN Stack Developer</h2>
-            <nav>
-                <ul class="flex space-x-6">
+            <h2 class="text-xl sm:text-2xl font-bold hidden sm:block">MERN Stack Developer</h2>
+
+            <!-- Hamburger Icon -->
+            <button id="hamburger-icon" class="sm:hidden text-2xl focus:outline-none">
+                <span class="material-icons">menu</span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="relative">
+                <!-- Navigation Links for Desktop -->
+                <ul id="nav-links" class="flex space-x-6 sm:flex hidden sm:space-x-6">
                     <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
                     <li><a href="#education" class="hover:text-blue-500">Education</a></li>
                     <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
                     <li><a href="assets/Abishek_Resume.pdf" target="_blank" class="hover:text-blue-500">View Resume</a></li>
-                    <li><a href="assets/Abishek_Resume.pdf" download class="hover:text-blue-500">Download Resume</a></li>    
+                    <li><a href="assets/Abishek_Resume.pdf" download class="hover:text-blue-500">Download Resume</a></li>
+                </ul>
+            
+                <!-- Mobile Menu -->
+                <ul id="mobile-menu" class="absolute top-14 left-0 w-full bg-white shadow-md hidden sm:hidden flex-col space-y-4 p-6">
+                    <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+                    <li><a href="#education" class="hover:text-blue-500">Education</a></li>
+                    <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+                    <li><a href="assets/Abishek_Resume.pdf" target="_blank" class="hover:text-blue-500">View Resume</a></li>
+                    <li><a href="assets/Abishek_Resume.pdf" download class="hover:text-blue-500">Download Resume</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,7 +60,7 @@
         <!-- Projects Section -->
         <section id="projects" class="mb-16">
             <h2 class="text-3xl font-bold text-center">Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
                 <div class="bg-white p-6 shadow-md rounded-lg transform hover:scale-105 transition">
                     <h3 class="text-xl font-semibold">Govern Superintendent System</h3>
                     <p class="mt-2">Developed with VB.NET & Microsoft Access to streamline administrative tasks.</p>
@@ -64,7 +81,7 @@
         <!-- Education Section -->
         <section id="education" class="mb-16">
             <h2 class="text-3xl font-bold text-center">Education</h2>
-            <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
                 <div class="bg-white p-6 shadow-md rounded-lg">
                     <h3 class="text-xl font-semibold">Bachelor of Computer Applications</h3>
                     <p>Caussanel College of Arts & Science, Alagappa University</p>
@@ -131,6 +148,14 @@
             .then(response => alert("Email Sent Successfully!"))
             .catch(error => alert("Failed to send email. Please try again."));
         }
+
+        // Toggle Mobile Menu
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        hamburgerIcon.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
     </script>
 </body>
 </html>
