@@ -195,7 +195,7 @@
   gsap.from("h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
   gsap.from("section", { duration: 1, opacity: 0, y: 50, stagger: 0.3 });
 
-<<<<<<< HEAD
+
   // EmailJS Function
   (function(){
     emailjs.init("snTHEuCIgnl90M1Jk");  //Public Key
@@ -211,7 +211,6 @@
     .then(response => alert("Email Sent Successfully!"))
     .catch(error => alert("Failed to send email. Please try again."));
   }
-=======
  // Email Validation
  function validateEmail() {
       let email = document.getElementById("email").value;
@@ -265,7 +264,6 @@
 
       return false;
     });
->>>>>>> 3f28c15 (Contact form updated)
 
   // Toggle Mobile Menu
   const hamburgerIcon = document.getElementById("hamburger-icon");
@@ -279,4 +277,7 @@
   closeMenu.addEventListener("click", () => {
     mobileMenu.classList.add("hidden");
   });
+console.log("EmailJS Initialized");
+console.log("GSAP Animations Loaded");
+console.log("Contact Form Loaded");
 </script>
