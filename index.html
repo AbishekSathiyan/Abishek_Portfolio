@@ -191,9 +191,11 @@
 
  <!-- GSAP Animation Script and EmailJS -->
  <script>
+  // GSAP Animations
   gsap.from("h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
   gsap.from("section", { duration: 1, opacity: 0, y: 50, stagger: 0.3 });
 
+<<<<<<< HEAD
   // EmailJS Function
   (function(){
     emailjs.init("snTHEuCIgnl90M1Jk");  //Public Key
@@ -209,6 +211,61 @@
     .then(response => alert("Email Sent Successfully!"))
     .catch(error => alert("Failed to send email. Please try again."));
   }
+=======
+ // Email Validation
+ function validateEmail() {
+      let email = document.getElementById("email").value;
+      let errorMessage = document.getElementById("error-message");
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+      if (!emailPattern.test(email)) {
+        errorMessage.classList.remove("hidden");
+        return false; // Prevent form submission
+      } else {
+        errorMessage.classList.add("hidden");
+        return true;
+      }
+    }
+  
+    // EmailJS Initialization & Submission
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      if (!validateEmail()) {
+        alert("Invalid email! Please enter a valid email.");
+        return;
+      }
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all the fields!");
+        return;
+      }
+
+      emailjs.init("snTHEuCIgnl90M1Jk"); // Your EmailJS User ID
+
+      emailjs.send("service_064phx6", "template_tlz4xda", {
+        to_name: "Abishek",  
+        from_name: name,
+        from_email: email,  // Corrected this field
+        message: message,
+      })
+      .then(response => {
+        console.log("Email sent successfully:", response);
+        alert("Email Sent Successfully!");
+        document.getElementById("contact-form").reset();
+      })
+      .catch(error => {
+        console.error("EmailJS Error:", error);
+        alert("Failed to send email. Please check the console for errors.");
+      });
+
+      return false;
+    });
+>>>>>>> 3f28c15 (Contact form updated)
 
   // Toggle Mobile Menu
   const hamburgerIcon = document.getElementById("hamburger-icon");
