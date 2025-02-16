@@ -196,12 +196,12 @@
 
   // EmailJS Function
   (function(){
-    emailjs.init("snTHEuCIgnl90M1Jk");
+    emailjs.init("snTHEuCIgnl90M1Jk");  //Public Key
   })();
 
   function sendEmail(event) {
     event.preventDefault();
-    emailjs.send("service_064phx6", "template_7utm1ap", {
+    emailjs.send("service_064phx6", "template_7utm1ap", {  // Service Key
       from_name: document.getElementById("name").value,
       from_email: document.getElementById("email").value,
       message: document.getElementById("message").value,
