@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { submitContactForm } from "../services/api";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +11,7 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showMaintenance, setShowMaintenance] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,9 +26,11 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await submitContactForm(formData);
-      alert(response?.message || "Message sent successfully!");
-
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setShowMaintenance(true);
+      
+      // Reset form after showing maintenance message
       setFormData({
         name: "",
         email: "",
@@ -43,6 +45,29 @@ export default function Contact() {
       setIsSubmitting(false);
     }
   };
+
+  if (showMaintenance) {
+    return (
+      <section id="contact" className="py-20 bg-dark text-light">
+        <div className="container mx-auto px-6 max-w-2xl text-center">
+          <div className="bg-gray-800 p-8 rounded-lg border border-gray-700">
+            <h3 className="text-2xl font-bold mb-4 text-primary">
+              Backend Under Maintenance
+            </h3>
+            <p className="mb-6">
+              Our contact form is currently undergoing maintenance. Please try again later or reach out directly via email or phone.
+            </p>
+            <button
+              onClick={() => setShowMaintenance(false)}
+              className="bg-primary text-dark px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+            >
+              Return to Form
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="contact" className="py-20 bg-dark text-light">

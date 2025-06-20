@@ -25,7 +25,7 @@ const projects = [
       "Axios",
       "Geolocation API",
     ],
-    githubLink: "https://github.com/AbishekSathiyan/weather-react-app",
+    githubLink: "https://github.com/AbishekSathiyan/Weather_React_App/tree/f829bac135022c3a988f4210d112a251204e9b77",
     demoLink: "https://weather-react-app-two-theta.vercel.app/",
     image:
       "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1375&q=80",
