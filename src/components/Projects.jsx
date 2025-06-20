@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
+// ✅ Local image assets
+import BulkMailAsset from "./assets/Bulk_Mail.png";
+import WeatherAsset from "./assets/Weather_App.png";
+import TaskManagerAsset from "./assets/Task_Manager.png";
+
 const projects = [
   {
     id: 1,
@@ -8,10 +13,9 @@ const projects = [
     description:
       "A full-stack Bulk Email Sending Application designed to efficiently manage and send customized emails to multiple recipients using an Excel sheet filled with recipient details. Built with React.js, Node.js, Express, and MongoDB, the app allows users to compose messages, manage contact lists, and track email history. It features real-time validation, a responsive design, and a robust backend email service powered by Nodemailer.",
     technologies: ["React", "Tailwind CSS", "Node JS", "Express", "MongoDB"],
-    githubLink: "https://bulk-mail-front-end.vercel.app/",
+    githubLink: "https://github.com/AbishekSathiyan/Bulk-Mail-System",
     demoLink: "https://bulk-mail-front-end.vercel.app/login",
-    image:
-      "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80",
+    image: BulkMailAsset,
   },
   {
     id: 2,
@@ -25,10 +29,9 @@ const projects = [
       "Axios",
       "Geolocation API",
     ],
-    githubLink: "https://github.com/AbishekSathiyan/Weather_React_App/tree/f829bac135022c3a988f4210d112a251204e9b77",
+    githubLink: "https://github.com/AbishekSathiyan/Weather_React_App",
     demoLink: "https://weather-react-app-two-theta.vercel.app/",
-    image:
-      "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1375&q=80",
+    image: WeatherAsset,
   },
   {
     id: 3,
@@ -38,13 +41,11 @@ const projects = [
     technologies: ["React", "Tailwind CSS", "Local Storage", "React Icons"],
     githubLink: "https://github.com/AbishekSathiyan/Task_Manager_React",
     demoLink: "https://task-manager-react-10.vercel.app/",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1472&q=80",
+    image: TaskManagerAsset,
   },
 ];
 
 export default function Projects() {
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {

@@ -27,9 +27,9 @@ export default function Contact() {
 
     try {
       // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setShowMaintenance(true);
-      
+
       // Reset form after showing maintenance message
       setFormData({
         name: "",
@@ -51,24 +51,51 @@ export default function Contact() {
       <section id="contact" className="py-20 bg-dark text-light">
         <div className="container mx-auto px-6 max-w-2xl text-center">
           <div className="bg-gray-800 p-8 rounded-lg border border-gray-700">
+            {/* Maintenance Image from local assets */}
+          <div className="mb-6 flex justify-center">
+  <img
+    src="/Maintance_mode.png"
+    alt="Maintenance"
+    className="w-48 h-48 object-contain"
+  />
+</div>
+
+
             <h3 className="text-2xl font-bold mb-4 text-primary">
-              Backend Under Maintenance
+              Server Under Maintenance
             </h3>
             <p className="mb-6">
-              Our contact form is currently undergoing maintenance. Please try again later or reach out directly via email or phone.
+              Our server is currently undergoing maintenance. Please try again
+              later or reach out directly via email or WhatsApp for urgent
+              inquiries.
             </p>
-            <button
-              onClick={() => setShowMaintenance(false)}
-              className="bg-primary text-dark px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
-            >
-              Return to Form
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`mailto:abishek.sathiyan.2002@gmail.com`}
+                className="bg-gray-700 text-light px-6 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-colors"
+              >
+                Contact via Email
+              </a>
+              <button
+                onClick={() => setShowMaintenance(false)}
+                className="bg-primary text-dark px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+              >
+                Return to Form
+              </button>
+              <a
+                href="https://wa.me/917092085864"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 text-light px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              >
+                WhatsApp Now
+              </a>
+            </div>
           </div>
         </div>
       </section>
     );
   }
-
   return (
     <section id="contact" className="py-20 bg-dark text-light">
       <div className="container mx-auto px-6">
@@ -113,7 +140,7 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <div className="text-primary text-xl">📱</div>
                 <div>
-                  <h4 className="font-semibold">Phone</h4>
+                  <h4 className="font-semibold">Phone | WhatsApp</h4>
                   <a
                     href="https://wa.me/917092085864?text=Hello%20Abishek%2C%0A%0AI%20wanted%20to%20connect%20regarding%20Develop%20New%20Web%20Application."
                     target="_blank"

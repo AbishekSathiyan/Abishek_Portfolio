@@ -5,76 +5,78 @@ import Banner from "./assets/Banner.png";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-light text-dark">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">
+    <section id="about" className="py-16 px-4 bg-light text-dark">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
           About <span className="text-primary">Me</span>
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col lg:flex-row items-start gap-12">
           {/* Profile Image */}
-          <div className="md:w-1/3 flex justify-center">
-            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src={Banner} 
-                alt="Abishek S" 
+          <div className="lg:w-1/3 w-full flex justify-center">
+            <div className="w-60 h-60 sm:w-64 sm:h-64 rounded-lg overflow-hidden shadow-lg">
+              <img
+                src={Banner}
+                alt="Abishek S"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
 
           {/* About Content */}
-          <div className="md:w-2/3">
+          <div className="lg:w-2/3 w-full">
             <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
-            <p className="mb-4">
+            <p className="mb-4 text-base">
               I'm a passionate frontend developer with 3 years of experience building responsive and
               user-friendly web applications. I specialize in React, JavaScript, and modern CSS frameworks.
             </p>
-            <p className="mb-6">
+            <p className="mb-6 text-base">
               My approach combines technical expertise with an eye for design to create seamless digital
               experiences that users love.
             </p>
 
             {/* Personal Info Table */}
-            <table className="w-full text-left table-auto mb-6 border-collapse">
-              <tbody className="divide-y divide-gray-300">
-                <tr>
-                  <th className="pr-4 py-2 font-semibold">Name</th>
-                  <td className="py-2">Abishek S</td>
-                </tr>
-                <tr>
-                  <th className="pr-4 py-2 font-semibold">Email</th>
-                  <td className="py-2">
-                    <a 
-                      href="mailto:abishek.sathiyan.2002@gmail.com" 
-                      className="text-blue-600 hover:underline"
-                    >
-                      abishek.sathiyan.2002@gmail.com
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <th className="pr-4 py-2 font-semibold">From</th>
-                  <td className="py-2">Methalodai, Ramanathapuram, TamilNadu, India</td>
-                </tr>
-                <tr>
-                  <th className="pr-4 py-2 font-semibold">Experience</th>
-                  <td className="py-2">
-                    Fresher with Hands‑on Experience in Real‑World Projects and Modern Web Technologies.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="overflow-x-auto mb-6">
+              <table className="min-w-full text-sm text-left table-auto border-collapse">
+                <tbody className="divide-y divide-gray-300">
+                  <tr>
+                    <th className="pr-4 py-2 font-semibold whitespace-nowrap">Name</th>
+                    <td className="py-2">Abishek S</td>
+                  </tr>
+                  <tr>
+                    <th className="pr-4 py-2 font-semibold whitespace-nowrap">Email</th>
+                    <td className="py-2">
+                      <a
+                        href="mailto:abishek.sathiyan.2002@gmail.com"
+                        className="text-blue-600 hover:underline break-all"
+                      >
+                        abishek.sathiyan.2002@gmail.com
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th className="pr-4 py-2 font-semibold whitespace-nowrap">From</th>
+                    <td className="py-2">Methalodai, Ramanathapuram, Tamil Nadu, India</td>
+                  </tr>
+                  <tr>
+                    <th className="pr-4 py-2 font-semibold whitespace-nowrap">Experience</th>
+                    <td className="py-2">
+                      Fresher with Hands‑on Experience in Real‑World Projects and Modern Web Technologies.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             {/* Education Section */}
-            <div className="mb-8">
+            <div className="mb-8 overflow-x-auto">
               <h3 className="text-xl font-semibold flex items-center gap-2 mb-3">
                 <GraduationCap className="w-5 h-5 text-primary" /> Education
               </h3>
-              <table className="w-full text-left table-auto border-collapse">
+              <table className="min-w-full text-sm text-left border-collapse">
                 <thead>
                   <tr className="border-b">
-                    <th className="py-2">Program</th>
+                    <th className="py-2 whitespace-nowrap">Program</th>
                     <th className="py-2">Institution</th>
                     <th className="py-2">Year</th>
                   </tr>
@@ -95,11 +97,11 @@ export default function About() {
             </div>
 
             {/* Certifications Section */}
-            <div className="mb-8">
+            <div className="mb-8 overflow-x-auto">
               <h3 className="text-xl font-semibold flex items-center gap-2 mb-3">
                 <FileBadge className="w-5 h-5 text-primary" /> Certifications
               </h3>
-              <table className="w-full text-left table-auto border-collapse">
+              <table className="min-w-full text-sm text-left border-collapse">
                 <thead>
                   <tr className="border-b">
                     <th className="py-2">Certification</th>
@@ -124,11 +126,11 @@ export default function About() {
             </div>
 
             {/* Internship Section */}
-            <div className="mb-8">
+            <div className="mb-8 overflow-x-auto">
               <h3 className="text-xl font-semibold flex items-center gap-2 mb-3">
                 <Briefcase className="w-5 h-5 text-primary" /> Internships
               </h3>
-              <table className="w-full text-left table-auto border-collapse">
+              <table className="min-w-full text-sm text-left border-collapse">
                 <thead>
                   <tr className="border-b">
                     <th className="py-2">Role</th>
@@ -168,7 +170,7 @@ export default function About() {
                 href="/Abishek_S_Resume.pdf"
                 download="Abishek_S_Resume.pdf"
                 className="inline-flex items-center gap-2 bg-primary text-dark px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)"
                 }}
