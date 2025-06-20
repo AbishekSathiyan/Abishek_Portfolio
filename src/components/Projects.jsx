@@ -37,7 +37,7 @@ const projects = [
     id: 3,
     title: "Task Management App",
     description:
-      "A full-featured task manager with drag-and-drop functionality, task categories, and progress tracking.",
+      "A full-featured task manager with drag-and-drop functionality, task categories, and progress tracking. The app allows users to create, organize, and update tasks across multiple stages such as To-Do, In Progress, and Completed. Built with React and Tailwind CSS, it supports persistent local storage, responsive UI, and intuitive task interactions for improved productivity. Users can easily add, edit, and delete tasks, making it a versatile tool for personal and team project management.",
     technologies: ["React", "Tailwind CSS", "Local Storage", "React Icons"],
     githubLink: "https://github.com/AbishekSathiyan/Task_Manager_React",
     demoLink: "https://task-manager-react-10.vercel.app/",
