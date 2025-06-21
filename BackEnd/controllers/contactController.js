@@ -1,4 +1,3 @@
-// controllers/contact.controller.js
 const asyncHandler = require("express-async-handler");
 const Contact = require("../models/Contact");
 const { sendReplyEmail } = require("../utils/emailSender");
@@ -6,33 +5,40 @@ const { sendReplyEmail } = require("../utils/emailSender");
 /* ------------------------------------------------------------------ */
 /*  POST /api/contacts  |  Public  |  Create a new contact + auto‑reply */
 exports.createContact = asyncHandler(async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, contact, subject, message } = req.body;
 
-  // 1️⃣  Save to DB
-  const contact = await Contact.create({ name, email, subject, message });
+  // 1️⃣  Save to DB (all fields)
+  const savedContact = await Contact.create({
+    name,
+    email,
+    contact,
+    subject,
+    message,
+  });
 
-  // 2️⃣  Build plain HTML (no background)
+  // 2️⃣  Build plain HTML auto‑reply
   const htmlContent = `
-
-      <p style="font-size: 16px; margin-top: 20px;">Dear ${name},</p>
-      <p style="font-size: 15px;">
-        Thank you for contacting me! I've received your message and will get back to you soon.
-      </p>
-      <p style="font-size: 15px;">
-        Best regards,<br/>
-        <strong>Abishek S</strong>
-      </p>
-    </div>
+    <p style="font-size:16px;margin-top:20px;">Dear ${name},</p>
+    <p style="font-size:15px;">
+      Thank you for contacting me! I've received your message and will get back to you soon.
+    </p>
+    <p style="font-size:15px;">
+      Best regards,<br/>
+      <strong>Abishek S</strong>
+    </p>
   `;
 
-  // 3️⃣  Send auto‑reply (fire‑and‑forget—log if it fails)
-  sendReplyEmail(email, `Re: ${subject || "Your Inquiry"}`, htmlContent).catch(
-    (err) => console.error("❌ Auto‑reply failed:", err)
-  );
+  // 3️⃣  Fire‑and‑forget auto‑reply
+  sendReplyEmail(
+    email,
+    `Re: ${subject || "Your Inquiry"}`,
+    htmlContent
+  ).catch((err) => console.error("❌ Auto‑reply failed:", err));
 
+  // 4️⃣  Respond
   res.status(201).json({
     success: true,
-    data: contact,
+    data: savedContact,
     message: "Thank you for your message! I will get back to you soon.",
   });
 });
@@ -58,9 +64,10 @@ exports.markAsRead = asyncHandler(async (req, res) => {
   );
 
   if (!contact) {
-    return res
-      .status(404)
-      .json({ success: false, message: "Contact not found" });
+    return res.status(404).json({
+      success: false,
+      message: "Contact not found",
+    });
   }
 
   res.status(200).json({ success: true, data: contact });
@@ -72,9 +79,10 @@ exports.deleteContact = asyncHandler(async (req, res) => {
   const contact = await Contact.findByIdAndDelete(req.params.id);
 
   if (!contact) {
-    return res
-      .status(404)
-      .json({ success: false, message: "Contact not found" });
+    return res.status(404).json({
+      success: false,
+      message: "Contact not found",
+    });
   }
 
   res.status(200).json({
