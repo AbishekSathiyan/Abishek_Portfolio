@@ -1,3 +1,2 @@
-# AbishekSathiyan-Abishek-S-MERN_Stack_Developer_Portfolio
-A modern, responsive portfolio showcasing my full-stack projects, skills, and contact details with DB Connection.
-"# Abishek_Portfolio" 
+# Abishek_Portfolio_Client
+💻 I'm Abishek S, a passionate MERN Stack Developer. This portfolio showcases my React.js, Tailwind CSS, and JavaScript skills. It's responsive, fast, and deployed via Vercel. Explore my projects, skills, and contact info. Thanks for visiting!
