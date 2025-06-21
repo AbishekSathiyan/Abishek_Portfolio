@@ -74,7 +74,7 @@ export default function Projects() {
   const cardHover = {
     y: -8,
     scale: 1.02,
-    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
     transition: {
       type: "spring",
       stiffness: 400,
@@ -112,7 +112,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-gray-50 text-gray-900">
+    <section id="projects" className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -122,9 +122,9 @@ export default function Projects() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-primary">Projects</span>
+            Featured <span className="text-blue-400">Projects</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
             Professional projects showcasing full-stack development capabilities
           </p>
         </motion.div>
@@ -141,7 +141,7 @@ export default function Projects() {
               key={project.id}
               variants={item}
               whileHover={cardHover}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all h-full flex flex-col"
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all h-full flex flex-col border border-gray-700"
             >
               <div className="h-48 overflow-hidden relative">
                 <motion.img
@@ -150,14 +150,14 @@ export default function Projects() {
                   className="w-full h-full object-cover"
                   whileHover={imageHover}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                 <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white">
                   {project.title}
                 </h3>
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <p className="text-gray-600 mb-4 flex-grow">
+                <p className="text-gray-300 mb-4 flex-grow">
                   {project.description}
                 </p>
 
@@ -166,7 +166,7 @@ export default function Projects() {
                     <motion.span
                       key={index}
                       whileHover={techTagHover}
-                      className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full cursor-default"
+                      className="bg-blue-400/10 text-blue-400 text-xs px-3 py-1 rounded-full cursor-default"
                     >
                       {tech}
                     </motion.span>
@@ -176,7 +176,7 @@ export default function Projects() {
                 <div className="flex space-x-4 mt-auto">
                   <motion.a
                     href={project.githubLink}
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                    className="flex items-center text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={linkHover}
@@ -186,7 +186,7 @@ export default function Projects() {
                   </motion.a>
                   <motion.a
                     href={project.demoLink}
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                    className="flex items-center text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={linkHover}
